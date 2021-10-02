@@ -1,25 +1,27 @@
 # MySQL
 
-Este `Vagrantfile` provisiona três máquinas virtuais com Debian 10 com a versão 8.0 do MySQL.
+This `Vagrantfile` provision two machines with Debian 10 ready to install MySQL 8.0 enterprise edition.
 
-## Provisionamento
+You should download `.deb` packages from Oracle's website and put then in `mysql` directory.
 
-Para provisionar as máquinas, instale o [vagrant](https://www.vagrantup.com/) em sua máquina e algum *hypervisor* como o [VirtualBox](https://www.virtualbox.org/) ou o [Libvirt](https://libvirt.org/). O Hyper-V não suporta definição de endereço fixo.
+## Provision
 
-Clone o repositório:
+To provision this machines, install [vagrant](https://www.vagrantup.com/) in your machine and some **hypervisor** as [VirtualBox](https://www.virtualbox.org/) or [Libvirt](https://libvirt.org/).
+
+Clone the repository:
 
 ```bash
-git clone 'https://github.com/hector-vido/vagrant-mysql.git'
+git clone 'https://github.com/hector-vido/vagrant-mysql-enterprise.git'
 ```
 
-Entre no diretório e inicie o **vagrant**:
+Enter in the created directory and starts `vagrant`:
 
 ```bash
-cd vagrant-mysql
+cd vagrant-mysql-enterprise
 vagrant up
 ```
 
-Verifique quais máquinas estão rodando:
+Verify what machines are running:
 
 ```bash
 vagrant status
@@ -27,19 +29,17 @@ vagrant status
 #
 #db1                       running (virtualbox)
 #db2                       running (virtualbox)
-#db3                       running (virtualbox)
 ```
 
-Entre em qualquer uma das máquinas através de seus nomes:
+Access one of the machines with it name:
 
 ```bash
 vagrant ssh db1
 ```
 
-## Máquinas
+## Machines
 
 | Nome    | Distro    | IP           |
 |---------|-----------|--------------|
 | db1     | Debian 10 | 172.27.11.10 |
 | db2     | Debian 10 | 172.27.11.20 |
-| db3     | Debian 10 | 172.27.11.30 |
